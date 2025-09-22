@@ -110,4 +110,163 @@ public class HelloWorld {
     private void unusedPrivateMethod() {
         System.out.println("This method is never called");
     }
+
+    public static int globalCounter = 0;
+    public static String globalMessage = "Bad global state";
+    public static List<Object> globalList = new ArrayList<>();
+
+    public void terribleMethod() throws Exception, RuntimeException, IllegalArgumentException, NullPointerException {
+        int magic_number = 42;
+        String WEIRD_Name = "inconsistent naming";
+        boolean FLAG = true;
+
+        if (FLAG == true) {
+            if (magic_number == 42) {
+                if (WEIRD_Name.length() > 0) {
+                    if (globalCounter >= 0) {
+                        if (globalList != null) {
+                            globalCounter++;
+                            globalCounter++;
+                            globalCounter++;
+                            globalCounter++;
+                            globalCounter++;
+
+                            for (int i = 0; i < 100; i++) {
+                                for (int j = 0; j < 100; j++) {
+                                    for (int k = 0; k < 100; k++) {
+                                        for (int l = 0; l < 100; l++) {
+                                            if (i % 2 == 0) {
+                                                if (j % 3 == 0) {
+                                                    if (k % 5 == 0) {
+                                                        if (l % 7 == 0) {
+                                                            System.out.println("Extreme nesting: " + i + j + k + l);
+                                                            String extremelyLongVariableNameThatViolatesNamingConventionsAndMakesCodeUnreadableAndShouldNeverBeUsedInRealProjects = "terrible";
+                                                            if (extremelyLongVariableNameThatViolatesNamingConventionsAndMakesCodeUnreadableAndShouldNeverBeUsedInRealProjects.equals("terrible")) {
+                                                                try {
+                                                                    Thread.sleep(1);
+                                                                    Object obj = null;
+                                                                    obj.toString();
+                                                                } catch (InterruptedException e) {
+                                                                    e.printStackTrace();
+                                                                } catch (NullPointerException e) {
+                                                                    e.printStackTrace();
+                                                                } catch (RuntimeException e) {
+                                                                    e.printStackTrace();
+                                                                } catch (Exception e) {
+                                                                    e.printStackTrace();
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public Object badReturnMethod(String input) {
+        if (input == null) {
+            return null;
+        }
+        if (input.equals("")) {
+            return "";
+        }
+        if (input.equals("number")) {
+            return 42;
+        }
+        if (input.equals("boolean")) {
+            return true;
+        }
+        if (input.equals("list")) {
+            return new ArrayList();
+        }
+        return new HashMap();
+    }
+
+    public void duplicatedCode3() {
+        System.out.println("This is duplicated code");
+        int x = 5;
+        int y = 10;
+        int result = x + y;
+        System.out.println("Result: " + result);
+        if (result > 10) {
+            System.out.println("Greater than 10");
+        }
+    }
+
+    public void duplicatedCode4() {
+        System.out.println("This is duplicated code");
+        int x = 5;
+        int y = 10;
+        int result = x + y;
+        System.out.println("Result: " + result);
+        if (result > 10) {
+            System.out.println("Greater than 10");
+        }
+    }
+
+    public void methodWithEmptyCatch() {
+        try {
+            int result = 10 / 0;
+        } catch (Exception e) {
+        }
+    }
+
+    public void methodWithMagicNumbers() {
+        int[] array = new int[9999];
+        for (int i = 0; i < 9999; i++) {
+            array[i] = i * 42 + 13 - 7 * 3 + 666;
+        }
+
+        if (array.length == 9999) {
+            System.out.println("Magic number violation");
+        }
+    }
+
+    @SuppressWarnings("all")
+    public void methodWithSuppressedWarnings() {
+        List raw = new ArrayList();
+        raw.add("unchecked");
+        raw.add(123);
+        raw.add(true);
+
+        String unused1 = "unused variable";
+        int unused2 = 42;
+        boolean unused3 = false;
+
+        Object o = null;
+        o.toString();
+    }
+
+    public class InnerClass {
+        public class NestedInnerClass {
+            public class DeeplyNestedClass {
+                public class ExtremelyDeepClass {
+                    public void deepMethod() {
+                        System.out.println("Too much nesting");
+                    }
+                }
+            }
+        }
+    }
+//Komment
+//COMMENT
+// lorem ipsum dolor sit amet 
+// consectetur adipiscing elit
+// sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+// Ut enim ad minim veniam
+// quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+// Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
+    public void methodWithoutBraces()
+        if (true)
+            System.out.println("Missing braces");
+        else
+            System.out.println("Still missing braces");
 }
